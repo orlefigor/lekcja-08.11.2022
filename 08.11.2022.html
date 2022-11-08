@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <main>
+      <label for="num1"
+        >podaj 1 liczbe: <input type="number" id="num1"
+      /></label>
+      <label for="num2"
+        >podaj 2 liczbe: <input type="number" id="num2"
+      /></label>
+      <label for="add"
+        >suma<input type="radio" id="add" name="oper" value="+"
+      /></label>
+      <label for="subst"
+        >roznica<input type="radio" id="subst" name="oper" value="-"
+      /></label>
+      <label for="multip"
+        >iloczyn<input type="radio" id="multip" name="oper" value="*"
+      /></label>
+      <label for="diver"
+        >iloraz<input type="radio" id="diver" name="oper" value="/"
+      /></label>
+      <button>licz</button>
+    </main>
+    <section>
+      <p id="display"></p>
+    </section>
+    <script>
+      const num1 = document.getElementById("num1");
+      const num2 = document.querySelector("#num2");
+      const operations = document.querySelectorAll('[name="oper"]');
+      const btn = document.querySelector("button");
+      const display = document.querySelector("#display");
+      function fn1() {
+        const num1Val = parseInt(num1.value);
+        const num2Val = parseInt(num2.value);
+
+        let oper = "";
+
+        for (let i = 0; i < operations.length; i++) {
+          if (operations[i].checked) {
+            oper = operations[i].value;
+          }
+        }
+        console.log(oper);
+
+        switch (oper) {
+          case "+":
+            if (!isNaN(num1Val) && !isNaN(num2Val)) {
+              display.innerHTML = num1Val + num2Val;
+            } else {
+              display.innerHTML = "to nie liczby";
+            }
+            break;
+          case "-":
+            if (!isNaN(num1Val) && !isNaN(num2Val)) {
+              display.innerHTML = num1Val - num2Val;
+            } else {
+              display.innerHTML = "to nie liczby";
+            }
+            break;
+          case "*":
+            if (!isNaN(num1Val) && !isNaN(num2Val)) {
+              display.innerHTML = num1Val * num2Val;
+            } else {
+              display.innerHTML = "to nie liczby";
+            }
+            break;
+          case "/":
+            if (!isNaN(num1Val) && !isNaN(num2Val)) {
+              display.innerHTML = num1Val / num2Val;
+            } else {
+              display.innerHTML = "to nie liczby";
+            }
+            break;
+        }
+      }
+
+      btn.addEventListener("click", fn1);
+    </script>
+  </body>
+</html>
