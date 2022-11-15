@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <header></header>
+    <main>
+      <label
+        >Podaj pierwsza liczbe
+        <input type="number" id="liczb1" />
+      </label>
+      <p>
+        <label
+          >Podaj druga liczbe <input type="number" id="liczb2" / required>
+        </label>
+      </p>
+      <button id="button1">dodaj</button> |
+      <button id="button2">Odejmij</button> |
+      <button id="button3">Pomnoz</button> |
+      <button id="button4">Podziel</button>
+      <p id="pokaz"></p>
+
+      <script>
+        const linia1 = document.querySelector('#liczb1');
+        const linia2 = document.querySelector('#liczb2');
+        const przycisk1 = document.querySelector('#button1');
+        const przycisk2 = document.querySelector('#button2');
+        const przycisk3 = document.querySelector('#button3');
+        const przycisk4 = document.querySelector('#button4');
+
+        function dodawanie() {
+          const liczba1 = parseInt(linia1.value);
+          const liczba2 = parseInt(linia2.value);
+          const wynik = liczba1 + liczba2;
+          pokaz.innerHTML = wynik;
+        }
+        function odejmowanie() {
+          const liczba1 = parseInt(linia1.value);
+          const liczba2 = parseInt(linia2.value);
+          const wynik = liczba1 - liczba2;
+          pokaz.innerHTML = wynik;
+        }
+        function mnozenie() {
+          const liczba1 = parseInt(linia1.value);
+          const liczba2 = parseInt(linia2.value);
+          const wynik = liczba1 * liczba2;
+          pokaz.innerHTML = wynik;
+        }
+        function dzielenie() {
+          const liczba1 = parseInt(linia1.value);
+          const liczba2 = parseInt(linia2.value);
+          const wynik = liczba1 / liczba2;
+          pokaz.innerHTML = wynik;
+        }
+
+        przycisk1.addEventListener('click', dodawanie);
+        przycisk2.addEventListener('click', odejmowanie);
+        przycisk3.addEventListener('click', mnozenie);
+        przycisk4.addEventListener('click', dzielenie);
+      </script>
+    </main>
+  </body>
+</html>
